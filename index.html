@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisador Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="barra-navegacion">
+            <div class="contenedor">
+                <div class="logo">
+                    <h2>Ministerio de Salud Pública</h2>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-destacada" id="seccion-destacada">
+            <div class="capa-destacada"></div>
+            <div class="contenido-destacado">
+                <h1>Pesquisador Virtual</h1>
+                <p class="descripcion-destacada">
+                    Sistema de registro de síntomas para arbovirus (Dengue, Zika y Chikungunya).
+                    Ayúdanos a mejorar la asignación de recursos médicos en tu comunidad registrando
+                    tus síntomas de forma rápida y segura. Tu información permite tomar decisiones
+                    más acertadas en la atención de consultorios del médico de familia.
+                </p>
+                <button class="btn-primario">Registrar Síntoma</button>
+            </div>
+        </section>
+
+        <!-- Información sobre Arbovirus -->
+        <section class="info-arbovirus" id="info-arbovirus">
+            <div class="contenedor">
+                <h2 class="section-title">Información sobre Arbovirus</h2>
+                <p class="section-subtitle">
+                    Conoce los síntomas y características de las enfermedades que monitoreamos
+                </p>
+
+                <div class="rejilla-tarjetas">
+                    <!-- Tarjeta Dengue -->
+                    <div class="tarjeta">
+                        <div class="icono-tarjeta dengue">
+                            <img src="assets/mosquito-insect-side-view-svgrepo-com.svg" alt="dengue-icon" width="48"
+                                height="48">
+                        </div>
+                        <h3>Dengue</h3>
+                        <p>
+                            Enfermedad viral transmitida por mosquitos Aedes. Los síntomas incluyen
+                            fiebre alta, dolor de cabeza intenso, dolor detrás de los ojos, dolores
+                            musculares y articulares, y sarpullido.
+                        </p>
+                        <ul class="lista-sintomas">
+                            <li>Fiebre alta repentina</li>
+                            <li>Dolor intenso de cabeza</li>
+                            <li>Dolor muscular y articular</li>
+                            <li>Náuseas y vómitos</li>
+                            <li>Sarpullido cutáneo</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tarjeta Zika -->
+                    <div class="tarjeta">
+                        <div class="icono-tarjeta zika">
+                            <img src="assets/mosquito-svgrepo.svg" alt="zika-icon" width="48" height="48">
+                        </div>
+                        <h3>Zika</h3>
+                        <p>
+                            Virus transmitido principalmente por mosquitos Aedes. Generalmente presenta
+                            síntomas leves, pero puede causar complicaciones en mujeres embarazadas.
+                            Los síntomas duran entre 2 y 7 días.
+                        </p>
+                        <ul class="lista-sintomas">
+                            <li>Fiebre moderada</li>
+                            <li>Sarpullido</li>
+                            <li>Conjuntivitis</li>
+                            <li>Dolor articular y muscular</li>
+                            <li>Dolor de cabeza</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tarjeta Chikungunya -->
+                    <div class="tarjeta">
+                        <div class="icono-tarjeta chikungunya">
+                            <img src="assets/mosquito-svgrepo-com.svg" alt="chicungunya-icon" width="48" height="48">
+                        </div>
+                        <h3>Chikungunya</h3>
+                        <p>
+                            Enfermedad viral caracterizada por dolor articular intenso y debilitante.
+                            Transmitida por mosquitos Aedes. El dolor articular puede persistir durante
+                            meses después de la infección inicial.
+                        </p>
+                        <ul class="lista-sintomas">
+                            <li>Fiebre alta y repentina</li>
+                            <li>Dolor articular severo</li>
+                            <li>Dolor muscular</li>
+                            <li>Dolor de cabeza</li>
+                            <li>Sarpullido</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Prevención -->
+                <div class="seccion-prevencion">
+                    <h3>Medidas de Prevención</h3>
+                    <div class="rejilla-prevencion">
+                        <div class="item-prevencion">
+                            <span class="numero-prevencion">1</span>
+                            <p>Eliminar recipientes con agua estancada</p>
+                        </div>
+                        <div class="item-prevencion">
+                            <span class="numero-prevencion">2</span>
+                            <p>Usar repelente de mosquitos</p>
+                        </div>
+                        <div class="item-prevencion">
+                            <span class="numero-prevencion">3</span>
+                            <p>Vestir ropa que cubra brazos y piernas</p>
+                        </div>
+                        <div class="item-prevencion">
+                            <span class="numero-prevencion">4</span>
+                            <p>Usar mosquiteros en puertas y ventanas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Final -->
+                <div class="seccion-llamada-accion">
+                    <h3>¿Presentas alguno de estos síntomas?</h3>
+                    <p>Registra tu información para ayudarnos a mejorar la atención médica en tu comunidad</p>
+                    <button class="btn-primario">Registrar Síntoma</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="seccion-formulario" style="display: none;">
+            <button id="btn-volver-form" class="btn-volver"> <img src="assets/back-svgrepo-com.svg" alt="back-icon"
+                    width="15" height="15">Volver </button>
+            <h2>Agregar Síntomas</h2>
+
+            <form id="formulario-sintomas">
+
+
+                <div class="campo-formulario">
+                    <label for="nombre-paciente">Nombre:</label>
+                    <input type="text" id="nombre-paciente" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="apellidos-paciente">Apellidos:</label>
+                    <input type="text" id="apellidos-paciente" required>
+                </div>
+
+
+
+                <div class="campo-formulario">
+                    <label for="carnet">Carné de Identidad:</label>
+                    <input type="text" id="carnet" maxlength="11" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="consultorio">No. consultorio:</label>
+                    <input type="number" id="consultorio" min="1" max="100" required>
+                </div>
+
+
+                <div class="campo-formulario">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" min="1" max="120" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="municipio">Municipio:</label>
+                    <select id="municipio">
+                        <option value="Sandino">Sandino</option>
+                        <option value="Guane">Guane</option>
+                        <option value="Mantua">Mantua</option>
+                        <option value=" Minas-de-Matahambre">Minas de Matahambre</option>
+                        <option value="San-Juan">San Juan y Martinez</option>
+                        <option value="Viñales">Viñales</option>
+                        <option value="La Palma">La Palma</option>
+                        <option value="Los Palacios">Los Palacios</option>
+                        <option value="San Luis">San Luis</option>
+
+                        <option value="Pinar del Río">Pinar del Río</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Síntomas:</label>
+                    <div class="checkbox-group">
+                        <label for="sintoma-fiebre">
+                            <input type="checkbox" id="sintoma-fiebre" name="sintomas" value="fiebre"> Fiebre</label>
+                        <label for="sintoma-dolor-cabeza">
+                            <input type="checkbox" id="sintoma-dolor-cabeza" name="sintomas" value="dolor_de_cabeza">
+                            Dolor de cabeza</label>
+                        <label for="sintoma-dolor-muscular">
+                            <input type="checkbox" id="sintoma-dolor-muscular" name="sintomas" value="dolor_muscular">
+                            Dolor muscular</label>
+                        <label for="sintoma-dolor-articular">
+                            <input type="checkbox" id="sintoma-dolor-articular" name="sintomas" value="dolor_articular">
+                            Dolor articular</label>
+                        <label for="sintoma-sarpullido">
+                            <input type="checkbox" id="sintoma-sarpullido" name="sintomas" value="sarpullido">
+                            Sarpullido</label>
+
+                        <button type="button" id="btn-calcular-riesgo">Calcular Riesgo</button>
+                    </div>
+                    <div id="resultado-riesgo" class="resultado-riesgo"></div>
+                </div>
+                <div class="campo-formulario">
+                    <label for="dias">Días con síntomas:</label>
+                    <input type="number" id="dias" min="1">
+                </div>
+                <div class="campo-formulario">
+                    <label for="viaje">¿Ha viajado recientemente?</label>
+                    <div class="radio-group">
+                        <label for="viaje-si">
+                            <input type="radio" name="viaje" id="viaje-si" value="si"> Sí
+                        </label>
+                        <label for="viaje-no">
+                            <input type="radio" name="viaje" id="viaje-no" value="no" checked> No
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" id="btn-enviar-form">Enviar</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2026 Ministerio de Salud Pública. Sistema de Vigilancia Epidemiológica.</p>
+            <p>Para emergencias médicas, contacte a su médico de familia o acuda al centro de salud más cercano.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
