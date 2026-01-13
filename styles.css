@@ -16,9 +16,8 @@ body {
     padding: 0 20px;
 }
 
-/* Encabezado & Barra de navegación */
 header {
-    background-color: #2c5282;
+    background-color: #3c76be;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -32,7 +31,6 @@ header {
     font-size: 1.5rem;
 }
 
-/* Sección Destacada */
 .seccion-destacada {
     position: relative;
     min-height: 600px;
@@ -50,7 +48,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(44, 82, 130, 0.9) 0%, rgba(49, 130, 206, 0.85) 50%, rgba(66, 153, 225, 0.8) 100%);
+    background: linear-gradient(135deg,#667eea 0%,
+        #5cb5bd 100%);
 }
 
 .contenido-destacado {
@@ -76,7 +75,6 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Buttons */
 .btn-primario {
     background-color: #48bb78;
     color: white;
@@ -96,7 +94,6 @@ header {
     box-shadow: 0 6px 20px rgba(72, 187, 120, 0.5);
 }
 
-/* Arbovirus Info Section */
 .info-arbovirus {
     padding: 5rem 0;
     background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
@@ -116,7 +113,7 @@ header {
     margin-bottom: 3rem;
 }
 
-/* Rejilla de tarjetas */
+
 .rejilla-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -193,7 +190,7 @@ header {
     font-weight: bold;
 }
 
-/* Sección de Prevención */
+
 .seccion-prevencion {
     background: white;
     padding: 3rem;
@@ -224,7 +221,8 @@ header {
 .numero-prevencion {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%,
+        #5cb5bd 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -240,9 +238,8 @@ header {
     font-size: 1rem;
 }
 
-/* CTA Section */
 .seccion-llamada-accion {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #5cb5bd 100%);
     padding: 3rem;
     border-radius: 12px;
     text-align: center;
@@ -260,7 +257,6 @@ header {
     opacity: 0.95;
 }
 
-/* Footer */
 footer {
     background-color: #2d3748;
     color: white;
@@ -273,7 +269,7 @@ footer p {
     opacity: 0.9;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .seccion-destacada h1 {
         font-size: 2.5rem;
@@ -315,7 +311,6 @@ footer p {
     }
 }
 
-/* Form styles */
 #seccion-formulario {
     display: none; /* controlado por JS, aquí por si acaso */
     max-width: 760px;
@@ -349,11 +344,18 @@ footer p {
 }
 
 
+#formulario-sintomas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 1.5rem;
+    align-items: start;
+}
+
 #formulario-sintomas .campo-formulario {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0; 
 }
 
 #formulario-sintomas label {
@@ -362,10 +364,37 @@ footer p {
     font-size: 0.95rem;
 }
 
+#formulario-sintomas .campo-formulario:nth-child(7),
+#formulario-sintomas button[type="submit"] {
+    grid-column: 1 / -1;
+    justify-self: end;
+} 
+
+@supports(selector(:has(*))) {
+    #formulario-sintomas .campo-formulario:has(.checkbox-group) {
+        grid-column: 1 / -1;
+        justify-self: stretch;
+    }
+}
+
+.checkbox-group button {
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    #formulario-sintomas {
+        grid-template-columns: 1fr;
+    }
+
+    #formulario-sintomas button[type="submit"] {
+        justify-self: stretch;
+    }
+}
+
 #formulario-sintomas input[type="text"],
 #formulario-sintomas input[type="number"],
 #formulario-sintomas select {
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.8rem;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     background: #f8fafc;
@@ -408,7 +437,7 @@ footer p {
 }
 
 #btn-calcular-riesgo {
-    background: #f6ad55;
+    background: #48bb78;
     color: white;
     border: none;
     padding: 0.45rem 0.7rem;
@@ -417,10 +446,7 @@ footer p {
     font-weight: 700;
 }
 
-#btn-calcular-riesgo:hover {
-    background: #ed8936;
-    transform: translateY(-2px);
-}
+
 
 #btn-enviar-form {
     display: inline-block;
@@ -435,7 +461,7 @@ footer p {
     box-shadow: 0 6px 18px rgba(72, 187, 120, 0.18);
 }
 
-#btn-enviar-form:hover {
+#btn-enviar-form:hover, #btn-calcular-riesgo:hover {
     background: #38a169;
     transform: translateY(-2px);
 }
@@ -452,7 +478,7 @@ footer p {
     }
 }
 
-/* Form validation styles */
+
 .error-message {
     color: #e53e3e;
     font-size: 0.875rem;
@@ -464,7 +490,7 @@ footer p {
     box-shadow: 0 0 0 1px rgba(229, 62, 62, 0.15);
 }
 
-/* Resultado de riesgo */
+
 .resultado-riesgo {
     margin-top: 0.5rem;
     font-weight: 700;
